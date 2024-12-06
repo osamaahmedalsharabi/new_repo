@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 
 class CustomIconAppBarWidget extends StatelessWidget {
@@ -8,6 +6,7 @@ class CustomIconAppBarWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: const EdgeInsets.only(top: 4),
       padding: const EdgeInsets.all(12),
       alignment: Alignment.center,
       decoration: BoxDecoration(
