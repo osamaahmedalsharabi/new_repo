@@ -1,3 +1,4 @@
+import 'package:fifth_note_app/views/home_view.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -9,11 +10,12 @@ class NoteApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-          brightness: Brightness.dark,
-          useMaterial3: false,
-        ),
-        home: const Scaffold());
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        brightness: Brightness.dark,
+        useMaterial3: false,
+      ),
+      home: const HomeView(),
+    );
   }
 }
