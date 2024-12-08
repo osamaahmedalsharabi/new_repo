@@ -12,9 +12,6 @@ class HomeViewBody extends StatelessWidget {
       child: Column(
         children: [
           CustomAppBarWidget(),
-          SizedBox(
-            height: 8,
-          ),
           NoteListViewWidget()
         ],
       ),
