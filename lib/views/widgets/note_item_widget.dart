@@ -42,14 +42,6 @@ class NoteItemWidget extends StatelessWidget {
                       size: 32,
                     ),
                   ),
-                  // IconButton(
-                  //   onPressed: () {},
-                  //   icon: const Icon(
-                  //     Icons.edit,
-                  //     color: Colors.black,
-                  //     size: 32,
-                  //   ),
-                  // ),
                 ],
               ),
             ),
