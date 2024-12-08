@@ -1,5 +1,5 @@
 import 'package:fifth_note_app/views/widgets/custom_app_bar_widget.dart';
-import 'package:fifth_note_app/views/widgets/note_item_widget.dart';
+import 'package:fifth_note_app/views/widgets/note_list_view_widget.dart';
 import 'package:flutter/material.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -12,7 +12,10 @@ class HomeViewBody extends StatelessWidget {
       child: Column(
         children: [
           CustomAppBarWidget(),
-          NoteItemWidget(),
+          SizedBox(
+            height: 8,
+          ),
+          NoteListViewWidget()
         ],
       ),
     );
