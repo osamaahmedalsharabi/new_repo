@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class CustomIconAppBarWidget extends StatelessWidget {
-  const CustomIconAppBarWidget({super.key});
+  final IconData icon;
+  const CustomIconAppBarWidget({super.key, required this.icon});
 
   @override
   Widget build(BuildContext context) {
@@ -13,8 +14,8 @@ class CustomIconAppBarWidget extends StatelessWidget {
         borderRadius: BorderRadius.circular(8),
         color: Colors.white.withOpacity(0.08),
       ),
-      child: const Icon(
-        Icons.search,
+      child:  Icon(
+        icon,
         size: 32,
       ),
     );
