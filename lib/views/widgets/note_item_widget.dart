@@ -17,7 +17,7 @@ class NoteItemWidget extends StatelessWidget {
       },
       child: Container(
         decoration: BoxDecoration(
-          color: Color(note.color),
+          color: Color(note.color!),
           borderRadius: BorderRadius.circular(8),
         ),
         child: Padding(
@@ -59,7 +59,7 @@ class NoteItemWidget extends StatelessWidget {
                 ),
               ),
               Text(
-                note.date,
+                note.date!,
                 style: const TextStyle(
                   color: Colors.black45,
                   fontSize: 22,
