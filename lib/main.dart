@@ -11,7 +11,7 @@ void main() async{
 Future<void> initHive() async {
   await Hive.initFlutter();
   Hive.registerAdapter(NoteModelAdapter());
-  Hive.openBox('note_box');
+  Hive.openBox<NoteModel>('note_box');
 }
 
 class NoteApp extends StatelessWidget {

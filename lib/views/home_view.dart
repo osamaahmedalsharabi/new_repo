@@ -1,6 +1,8 @@
+import 'package:fifth_note_app/cubit/add_note/add_note_cubit.dart';
 import 'package:fifth_note_app/views/widgets/custom_model_bottom_sheet.dart';
 import 'package:fifth_note_app/views/widgets/home_view_body.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({
@@ -22,7 +24,10 @@ class HomeView extends StatelessWidget {
                 )),
                 context: context,
                 builder: (context) {
-                  return const CustomModelBottomSheet();
+                  return BlocProvider(
+                    create: (context) => AddNoteCubit(),
+                    child: const CustomModelBottomSheet(),
+                  );
                 });
           },
           child: const Icon(Icons.add),

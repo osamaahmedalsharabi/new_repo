@@ -15,6 +15,13 @@ class CustomTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      validator: (value) {
+        if (value?.isEmpty ?? true) {
+          return "Field is required";
+        } else {
+          return null;
+        }
+      },
       onChanged: onChanged,
       onSaved: onSaved,
       cursorColor: const Color(0xff63FFDA),
@@ -26,6 +33,7 @@ class CustomTextField extends StatelessWidget {
           color: Color(0xff63FFDA),
         ),
         errorBorder: borderStyle(color: Colors.red),
+        focusedErrorBorder: borderStyle(color: Colors.red),
         enabledBorder: borderStyle(),
         focusedBorder: borderStyle(color: const Color(0xff63FFDA)),
       ),

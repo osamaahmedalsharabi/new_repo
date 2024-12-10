@@ -5,10 +5,7 @@ sealed class AddNoteState {}
 
 final class AddNoteInitial extends AddNoteState {}
 
-final class AddNoteSuccess extends AddNoteState {
-  final NoteModel note;
-  AddNoteSuccess({required this.note});
-}
+final class AddNoteSuccess extends AddNoteState {}
 
 final class AddNoteFailure extends AddNoteState {
   final String errorMessage;
