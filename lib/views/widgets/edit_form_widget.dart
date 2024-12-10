@@ -2,6 +2,7 @@ import 'package:fifth_note_app/cubit/fetch_notes/fetch_notes_cubit.dart';
 import 'package:fifth_note_app/models/note_model.dart';
 import 'package:fifth_note_app/views/widgets/custom_app_bar_widget.dart';
 import 'package:fifth_note_app/views/widgets/custom_text_field.dart';
+import 'package:fifth_note_app/views/widgets/edit_color_list_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -48,6 +49,12 @@ class _EditFormWidgetState extends State<EditFormWidget> {
           hintText: widget.note.subtitle,
           maxLines: 5,
         ),
+        const SizedBox(
+          height: 16,
+        ),
+         EditColorListWidget(
+          note: widget.note,
+         )
       ],
     );
   }
