@@ -4,10 +4,11 @@ import 'package:flutter/material.dart';
 class CustomAppBarWidget extends StatelessWidget {
   final IconData icon;
   final String title;
+  final Function()? onTap;
   const CustomAppBarWidget({
     super.key,
     required this.title,
-    required this.icon,
+    required this.icon, this.onTap,
   });
 
   @override
@@ -24,8 +25,11 @@ class CustomAppBarWidget extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ),
           ),
-          CustomIconAppBarWidget(
-            icon: icon,
+          GestureDetector(
+            onTap: onTap,
+            child: CustomIconAppBarWidget(
+              icon: icon,
+            ),
           ),
         ],
       ),

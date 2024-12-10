@@ -1,29 +1,17 @@
-import 'package:fifth_note_app/views/widgets/custom_app_bar_widget.dart';
-import 'package:fifth_note_app/views/widgets/custom_text_field.dart';
+import 'package:fifth_note_app/models/note_model.dart';
+import 'package:fifth_note_app/views/widgets/edit_form_widget.dart';
 import 'package:flutter/material.dart';
 
 class BodyEditView extends StatelessWidget {
-  const BodyEditView({super.key});
+  final NoteModel note;
+  const BodyEditView({super.key, required this.note});
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 16.0),
-      child: Column(
-        children: [
-          CustomAppBarWidget(
-            title: "Edit",
-            icon: Icons.done,
-          ),
-          Padding(
-            padding: EdgeInsets.symmetric(vertical: 16.0),
-            child: CustomTextField(hintText: "Title"),
-          ),
-          CustomTextField(
-            hintText: "Content",
-            maxLines: 5,
-          ),
-        ],
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+      child: EditFormWidget(
+        note: note,
       ),
     );
   }

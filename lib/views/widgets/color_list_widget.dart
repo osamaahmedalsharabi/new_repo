@@ -12,7 +12,14 @@ class ColorItem extends StatelessWidget {
     return CircleAvatar(
       radius: 35,
       backgroundColor: color,
-      child: isActive ? const Icon(Icons.done) : null,
+      child: isActive
+          ? const FittedBox(
+              child: Icon(
+                Icons.done,
+                size: 1500,
+              ),
+            )
+          : null,
     );
   }
 }
