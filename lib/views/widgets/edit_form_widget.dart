@@ -1,6 +1,5 @@
 import 'package:fifth_note_app/cubit/fetch_notes/fetch_notes_cubit.dart';
 import 'package:fifth_note_app/models/note_model.dart';
-import 'package:fifth_note_app/views/widgets/color_list_widget.dart';
 import 'package:fifth_note_app/views/widgets/custom_app_bar_widget.dart';
 import 'package:fifth_note_app/views/widgets/custom_text_field.dart';
 import 'package:fifth_note_app/views/widgets/edit_color_list_widget.dart';
