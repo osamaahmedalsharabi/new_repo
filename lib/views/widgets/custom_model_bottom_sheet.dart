@@ -15,30 +15,26 @@ class CustomModelBottomSheet extends StatelessWidget {
             left: 16,
             top: 16,
             bottom: MediaQuery.of(context).viewInsets.bottom + 16),
-        child: BlocConsumer<AddNoteCubit, AddNoteState>(
+        child: BlocListener<AddNoteCubit, AddNoteState>(
           listener: (context, state) {
             if (state is AddNoteSuccess) {
-              Navigator.pop(context);
-              ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(
-                  content: Text("Your Note added SuccessFluly"),
-                ),
-              );
+              showMessage(context, "Your Note added SuccessFluly");
             }
             if (state is AddNoteFailure) {
-              Navigator.pop(context);
-
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(
-                  content: Text(state.errorMessage),
-                ),
-              );
+              showMessage(context, state.errorMessage);
             }
           },
-          builder: (context, state) {
-            return const AddNoteForm();
-          },
+          child: const AddNoteForm(),
         ),
+      ),
+    );
+  }
+
+  void showMessage(BuildContext context, String message) {
+    Navigator.pop(context);
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(message),
       ),
     );
   }
