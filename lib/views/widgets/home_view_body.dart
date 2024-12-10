@@ -1,5 +1,5 @@
+import 'package:fifth_note_app/views/widgets/build_list_note_with_cubit.dart';
 import 'package:fifth_note_app/views/widgets/custom_app_bar_widget.dart';
-import 'package:fifth_note_app/views/widgets/note_list_view_widget.dart';
 import 'package:flutter/material.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -15,7 +15,7 @@ class HomeViewBody extends StatelessWidget {
             title: "Notes",
             icon: Icons.search,
           ),
-          NoteListViewWidget()
+          BuildListNoteWithCubit()
         ],
       ),
     );

@@ -1,8 +1,12 @@
+import 'package:fifth_note_app/cubit/fetch_notes/fetch_notes_cubit.dart';
+import 'package:fifth_note_app/models/note_model.dart';
 import 'package:fifth_note_app/views/edit_view.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class NoteItemWidget extends StatelessWidget {
-  const NoteItemWidget({super.key});
+  final NoteModel note;
+  const NoteItemWidget({super.key, required this.note});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +17,7 @@ class NoteItemWidget extends StatelessWidget {
       },
       child: Container(
         decoration: BoxDecoration(
-          color: Colors.amber,
+          color: Color(note.color),
           borderRadius: BorderRadius.circular(8),
         ),
         child: Padding(
@@ -23,17 +27,17 @@ class NoteItemWidget extends StatelessWidget {
             children: [
               ListTile(
                 contentPadding: EdgeInsets.zero,
-                title: const Text(
-                  "Flutter Tips",
-                  style: TextStyle(
+                title: Text(
+                  note.title,
+                  style: const TextStyle(
                     color: Colors.black,
                     fontSize: 32,
                     fontWeight: FontWeight.w700,
                   ),
                 ),
-                subtitle: const Text(
-                  "In this project I have to create local app with git  flskdfj dslkfj sdalkfj asdlkfj asldk fasl df s sldakfj asdlf s slkdfj dslkf jsdlkf dsdlkf jsadklf jsdf sdjkfjowieafj sakdljf asldfs sdlfkjds lkfj sdlkfj sdlkfj alksd flskjf sd",
-                  style: TextStyle(
+                subtitle: Text(
+                  note.subtitle,
+                  style: const TextStyle(
                     color: Colors.black54,
                     fontSize: 20,
                   ),
@@ -51,9 +55,9 @@ class NoteItemWidget extends StatelessWidget {
                   ],
                 ),
               ),
-              const Text(
-                "2024/12/6",
-                style: TextStyle(
+              Text(
+                note.date,
+                style: const TextStyle(
                   color: Colors.black45,
                   fontSize: 22,
                 ),

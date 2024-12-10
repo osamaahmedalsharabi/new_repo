@@ -1,4 +1,5 @@
 import 'package:fifth_note_app/cubit/add_note/add_note_cubit.dart';
+import 'package:fifth_note_app/cubit/fetch_notes/fetch_notes_cubit.dart';
 import 'package:fifth_note_app/models/note_model.dart';
 import 'package:fifth_note_app/views/widgets/custom_button_widget.dart';
 import 'package:fifth_note_app/views/widgets/custom_text_field.dart';
@@ -45,6 +46,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
             onTap: () {
               if (formkey.currentState!.validate()) {
                 formkey.currentState!.save();
+                BlocProvider.of<FetchNotesCubit>(context).fetchNotes();
                 BlocProvider.of<AddNoteCubit>(context).addNote(NoteModel(
                     title: title!,
                     subtitle: subtitle!,
